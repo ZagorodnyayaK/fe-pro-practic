@@ -32,5 +32,27 @@ const productsList = [
 
 export default () => {
   const wrapper = document.querySelector('[data-module="products-list"]');
-  console.log('products-list wrapper', wrapper);
+  const docFragment = new DocumentFragment();
+
+
+  for (const {id, title, description} of productsList) {
+    const productsItemList = document.querySelector('.products-list--item');
+    const button = document.createElement('button');
+    const addTitle = document.createElement('h3');
+    const image = document.createElement('img');
+    const paragraph = document.createElement('p');
+    productsItemList.id = id
+    addTitle.classList.add('products-list--title');
+    addTitle.innerHTML = title;
+    image.src = ('https://placehold.co/300x300');
+    image.classList.add('products-list--image');
+    image.alt = '';
+    paragraph.innerHTML = description;
+    button.classList.add('products-list--button-more');
+
+    docFragment.appendChild(productsItemList, title, image, paragraph, button);
+  }
+  wrapper.innerHTML = '';
+
+  wrapper.appendChild(docFragment);
 };
