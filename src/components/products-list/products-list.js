@@ -36,12 +36,13 @@ export default () => {
 
 
   for (const {id, title, description} of productsList) {
-    const productsItemList = document.querySelector('.products-list--item');
+    const productsItemDiv = document.createElement('div');
     const button = document.createElement('button');
     const addTitle = document.createElement('h3');
     const image = document.createElement('img');
     const paragraph = document.createElement('p');
-    productsItemList.id = id
+    productsItemDiv.classList.add('products-list--item');
+    productsItemDiv.id = id;
     addTitle.classList.add('products-list--title');
     addTitle.innerHTML = title;
     image.src = ('https://placehold.co/300x300');
@@ -50,7 +51,6 @@ export default () => {
     paragraph.innerHTML = description;
     button.classList.add('products-list--button-more');
 
-    docFragment.appendChild(productsItemList);
     docFragment.appendChild(title);
     docFragment.appendChild(image);
     docFragment.appendChild(paragraph);
