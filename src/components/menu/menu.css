@@ -1,0 +1,21 @@
+[data-module="menu"] {
+  background: #ccc;
+  display: flex;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu--item {
+  color: #000;
+  flex: 1;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.menu--item:hover,
+.menu--item--active {
+  background: #fc0 !important;
+
+}
