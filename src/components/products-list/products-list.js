@@ -51,10 +51,12 @@ export default () => {
     paragraph.innerHTML = description;
     button.classList.add('products-list--button-more');
 
-    docFragment.appendChild(title);
-    docFragment.appendChild(image);
-    docFragment.appendChild(paragraph);
-    docFragment.appendChild(button);
+    productsItemDiv.appendChild(title)
+    productsItemDiv.appendChild(image)
+    productsItemDiv.appendChild(paragraph)
+    productsItemDiv.appendChild(button)
+
+    docFragment.appendChild(productsItemDiv);
   }
   wrapper.innerHTML = '';
 
