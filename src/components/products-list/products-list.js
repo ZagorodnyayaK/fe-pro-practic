@@ -35,23 +35,27 @@ export default () => {
   const docFragment = new DocumentFragment();
 
 
-  for (const {id, title, description} of productsList) {
+  for (const {title, description} of productsList) {
     const productsItemDiv = document.createElement('div');
-    const button = document.createElement('button');
-    const addTitle = document.createElement('h3');
-    const image = document.createElement('img');
-    const paragraph = document.createElement('p');
     productsItemDiv.classList.add('products-list--item');
-    productsItemDiv.id = id;
-    addTitle.classList.add('products-list--title');
-    addTitle.innerHTML = title;
+
+    const itemTitle = document.createElement('h3');
+    itemTitle.classList.add('products-list--title');
+    itemTitle.innerHTML = title;
+
+    const image = document.createElement('img');
     image.src = ('https://placehold.co/300x300');
     image.classList.add('products-list--image');
     image.alt = '';
-    paragraph.innerHTML = description;
-    button.classList.add('products-list--button-more');
 
-    productsItemDiv.appendChild(addTitle);
+    const paragraph = document.createElement('p');
+    paragraph.innerHTML = description;
+
+    const button = document.createElement('button');
+    button.classList.add('products-list--button-more');
+    button.innerHTML = 'read more'
+
+    productsItemDiv.appendChild(itemTitle);
     productsItemDiv.appendChild(image);
     productsItemDiv.appendChild(paragraph);
     productsItemDiv.appendChild(button);
