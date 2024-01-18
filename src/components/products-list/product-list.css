@@ -2,7 +2,7 @@
   align-content: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: space-between;
 }
 
 .products-list--item {
@@ -59,6 +59,9 @@
   .products-list--item {
     flex: 0 0 calc(30% - 30px);
   }
+  [data-module="products-list"] {
+        justify-content: space-evenly;
+      }
 }
 
 @media (max-width: 780px) {
