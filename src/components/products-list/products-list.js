@@ -36,8 +36,8 @@ export default () => {
 
 
   for (const {title, description} of productsList) {
-    const productsItemDiv = document.createElement('div');
-    productsItemDiv.classList.add('products-list--item');
+    const productsItem = document.createElement('div');
+    productsItem.classList.add('products-list--item');
 
     const itemTitle = document.createElement('h3');
     itemTitle.classList.add('products-list--title');
@@ -55,12 +55,12 @@ export default () => {
     button.classList.add('products-list--button-more');
     button.innerHTML = 'read more'
 
-    productsItemDiv.appendChild(itemTitle);
-    productsItemDiv.appendChild(image);
-    productsItemDiv.appendChild(paragraph);
-    productsItemDiv.appendChild(button);
+    productsItem.appendChild(itemTitle);
+    productsItem.appendChild(image);
+    productsItem.appendChild(paragraph);
+    productsItem.appendChild(button);
 
-    docFragment.appendChild(productsItemDiv);
+    docFragment.appendChild(productsItem);
   }
   wrapper.innerHTML = '';
 
