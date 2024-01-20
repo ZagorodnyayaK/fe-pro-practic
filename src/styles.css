@@ -1,4 +1,6 @@
-@import url(./components/menu/menu.css);
+@import url(components/lavalamp-menu/lavalamp-menu.css);
+@import url(components/simple-menu/simple-menu.css);
+@import url(components/top-menu/top-menu.css);
 @import url(./components/products-list/product-list.css);
 
 #app {

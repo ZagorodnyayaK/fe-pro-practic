@@ -30,7 +30,10 @@ const productsList = [
   },
 ];
 
-export default () => {
+
+export default class {
+  constructor() {
+
   const wrapper = document.querySelector('[data-module="products-list"]');
   const docFragment = new DocumentFragment();
 
@@ -65,4 +68,16 @@ export default () => {
   wrapper.innerHTML = '';
 
   wrapper.appendChild(docFragment);
-};
+  }
+
+  update() {
+    // will check later
+  }
+
+  destroy() {
+    // clear interval/timers
+    // remove dom
+    // clear event listeners
+    // abort all fetches
+  }
+}

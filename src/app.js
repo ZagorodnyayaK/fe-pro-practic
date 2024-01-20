@@ -1,7 +1,7 @@
-import initMenu from './components/menu/menu.js';
-import initProductsList from './components/products-list/products-list.js';
+import TopMenu from './components/top-menu/top-menu';
+import ProductsList from './components/products-list/products-list.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  initMenu();
-  initProductsList();
+  new ProductsList();
+  new TopMenu();
 });
