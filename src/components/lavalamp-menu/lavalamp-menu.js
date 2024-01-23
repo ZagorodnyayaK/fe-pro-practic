@@ -37,13 +37,13 @@
 
 
 export default class {
-  constructor(menuItems) {
-    const wrapper = document.querySelector('[data-module="lavalamp-menu"]');
-    wrapper.innerHTML = '';
+  constructor(menuWrapper, menuItems) {
     const docFragment = new DocumentFragment();
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('lavalamp-menu');
+    menuWrapper.appendChild(wrapper);
 
     for (const item of menuItems) {
-
       const link = document.createElement('a');
       const {text, bgColor} = item;
 
@@ -64,7 +64,7 @@ export default class {
 
   destroy() {
     // clear interval/timers
-    // remove dom
+    // remove wripper dom
     // clear event listeners
     // abort all fetches
   }

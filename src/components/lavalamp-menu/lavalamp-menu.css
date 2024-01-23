@@ -1,4 +1,4 @@
-[data-module="menu"] {
+.lavalamp-menu {
   background: #ccc;
   display: flex;
   font-weight: 700;
@@ -7,20 +7,14 @@
   text-transform: uppercase;
 }
 
-.menu--item {
+.lavalamp-menu--item {
   color: #000;
   flex: 1;
   padding: 10px;
   text-decoration: none;
 }
 
-.menu--item:hover,
-.menu--item--active {
-  background: #fc0 !important;
-
-}
-
-.menu--effect {
+.lavalamp-menu--effect {
   height: 42px;
   position: absolute;
   left: 0;

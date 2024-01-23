@@ -1,5 +1,5 @@
-import SimpleMenu from "../simple-menu/simple-menu";
-import LavalampMenu from "../lavalamp-menu/lavalamp-menu";
+import LavalampMenu from "../lavalamp-menu/lavalamp-menu.js";
+import SimpleMenu from "../simple-menu/simple-menu.js";
 
 const menuItems = [
   {
@@ -26,8 +26,9 @@ const menuItems = [
 
 export default class {
   constructor() {
-new SimpleMenu();
-new LavalampMenu();
+    const wrapper = document.querySelector('[data-module="top-menu"]');
+    new LavalampMenu(wrapper, menuItems);
+    new SimpleMenu(wrapper, menuItems);
 
   }
 
