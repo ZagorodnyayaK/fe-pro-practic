@@ -24,7 +24,7 @@ const menuItems = [
 export default class {
   constructor() {
     const wrapper = document.querySelector('[data-module="top-menu"]');
-    const items = wrapper.getElementsByClassName('lavalamp-menu--item')
+    const items = wrapper.getElementsByClassName('top-menu--item')
     wrapper.innerHTML = ''
 
     let activeItemIndex = 0;
@@ -39,7 +39,7 @@ export default class {
     for (const {text} of menuItems) {
       const item = document.createElement('a');
       item.href = '#';
-      item.classList.add('lavalamp-menu--item');
+      item.classList.add('top-menu--item');
       item.innerHTML = text;
       fragment.appendChild(item);
     }

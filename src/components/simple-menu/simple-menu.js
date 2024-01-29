@@ -4,6 +4,7 @@ export default class {
     const wrapper = document.createElement('div');
     wrapper.classList.add('simple-menu');
     menuWrapper.appendChild(wrapper);
+
     for (const item of menuItems) {
 
       const link = document.createElement('a');
@@ -16,6 +17,6 @@ export default class {
 
       docFragment.appendChild(link);
     }
-    wrapper.appendChild(docFragment);
+    docFragment.appendChild(wrapper);
   }
 }
