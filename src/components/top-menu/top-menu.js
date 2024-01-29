@@ -1,6 +1,3 @@
-import LavalampMenu from "../lavalamp-menu/lavalamp-menu.js";
-import SimpleMenu from "../simple-menu/simple-menu.js";
-
 const menuItems = [
   {
     bgColor: '#1abc9c',
@@ -27,19 +24,50 @@ const menuItems = [
 export default class {
   constructor() {
     const wrapper = document.querySelector('[data-module="top-menu"]');
-    new LavalampMenu(wrapper, menuItems);
-    new SimpleMenu(wrapper, menuItems);
+    const items = wrapper.getElementsByClassName('lavalamp-menu--item')
+    wrapper.innerHTML = ''
 
-  }
+    let activeItemIndex = 0;
 
-  update() {
-    // will check later
-  }
+    const effect = document.createElement('span');
+    effect.classList.add('menu--effect');
+    effect.style.width = `calc(100% / ${menuItems.length})`;
+    wrapper.appendChild((effect));
 
-  destroy() {
-    // clear interval/timers
-    // remove dom
-    // clear event listeners
-    // abort all fetches
+
+    const fragment = new DocumentFragment();
+    for (const {text} of menuItems) {
+      const item = document.createElement('a');
+      item.href = '#';
+      item.classList.add('lavalamp-menu--item');
+      item.innerHTML = text;
+      fragment.appendChild(item);
+    }
+    wrapper.appendChild(fragment);
+
+    const updateEffectByIndex = (index) => {
+      effect.style.left = `calc(${index} * 100% / ${menuItems.length})`;
+      effect.style.backgroundColor = menuItems[index].bgColor;
+    };
+
+    const onItemOver = (e) => {
+      const {target} = e;
+      const linkIndex = [...items].findIndex((i) => i === target);
+      updateEffectByIndex(linkIndex);
+    };
+
+    const onItemLeave = () => {
+      updateEffectByIndex(activeItemIndex);
+    };
+
+    const onClick = (e) => {
+      e.preventDefault();
+      activeItemIndex = [...items.findIndex((i) => i === e.target)];
+    };
+
+    updateEffectByIndex(0);
+    wrapper.addEventListener('mouseover', onItemOver);
+    wrapper.addEventListener('mouseleave', onItemLeave);
+    wrapper.addEventListener('click', onClick);
   }
 }

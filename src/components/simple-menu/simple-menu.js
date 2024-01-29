@@ -17,16 +17,5 @@ export default class {
       docFragment.appendChild(link);
     }
     wrapper.appendChild(docFragment);
-
-  }
-  update() {
-    // will check later
-  }
-
-  destroy() {
-    // clear interval/timers
-    // remove dom
-    // clear event listeners
-    // abort all fetches
   }
 }

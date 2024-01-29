@@ -1,0 +1,29 @@
+[data-module="top-menu"] {
+  display: flex;
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu--item {
+  cursor: pointer;
+  color: #000;
+  flex: 1;
+  padding: 10px;
+  position: relative;
+  text-decoration: none;
+}
+
+.menu--effect {
+  background-color: #f00;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  transition-property: left, background-color;
+  z-index: -1;
+}

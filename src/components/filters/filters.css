@@ -1,0 +1,12 @@
+[data-module="filters-item"] {
+  margin-right: 10px;
+}
+
+[data-module="filters-item"]:after {
+  content: '|';
+}
+
+[data-module="filters-item"] input[type="checkbox"] {
+  margin: 0 10px;
+  vertical-align: middle;
+}
