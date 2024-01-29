@@ -1,8 +1,8 @@
-[data-module="filters-item"] {
+[data-module="filters"] {
   margin-right: 10px;
 }
 
-[data-module="filters-item"]:after {
+[data-module="filters"]:after {
   content: '|';
 }
 
