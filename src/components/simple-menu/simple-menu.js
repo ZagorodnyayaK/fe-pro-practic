@@ -15,8 +15,8 @@ export default class {
       link.innerHTML = text;
       link.href = '#';
 
-      docFragment.appendChild(link);
+      wrapper.appendChild(link);
     }
-    docFragment.appendChild(wrapper);
+    docFragment.appendChild(docFragment);
   }
 }
