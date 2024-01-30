@@ -1,6 +1,9 @@
-@import url(./components/top-menu/top-menu.css);
-@import url(./components/simple-menu/simple-menu.css);
+@import url(./components/menu-top/menu-top.css);
+@import url(./components/menu-simple/menu-simple.css);
 @import url(./components/products-list/product-list.css);
+@import url(./components/sort/sort.css);
+@import url(./components/filters/filters.css);
+@import url(./components/filters-item/filters-item.css);
 
 #app {
   overflow: hidden;

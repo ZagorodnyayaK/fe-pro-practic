@@ -1,4 +1,4 @@
-.simple-menu{
+.menu-simple{
   align-content: center;
   display: flex;
   font-weight: 700;
@@ -10,7 +10,7 @@
   text-transform: uppercase;
 }
 
-.simple-menu--item {
+.menu-simple--item {
   color: #000;
   flex: 1;
   padding: 10px;

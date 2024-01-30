@@ -1,4 +1,4 @@
-[data-module="top-menu"] {
+[data-module="menu-top"] {
   display: flex;
   font-weight: 700;
   margin-bottom: 40px;
@@ -29,7 +29,7 @@
   z-index: -1;
 }
 
-.top-menu--item {
+.menu-top--item {
   color: #000;
   flex: 1;
   padding: 10px;

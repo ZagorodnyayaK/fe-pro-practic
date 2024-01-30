@@ -1,4 +1,4 @@
-import ProductListItem from '../products-list-item/products-list-item.js';
+import ProductListItem from "../products-list-item/products-list-item.js";
 
 export default class {
   constructor(productsList) {

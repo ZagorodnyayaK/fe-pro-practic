@@ -1,10 +1,11 @@
-import TopMenu from './components/top-menu/top-menu.js';
-import SimpleMenu from './components/simple-menu/simple-menu.js';
-import ProductsList from './components/products-list/products-list.js';
+import MenuTop from './components/menu-top/menu-top.js';
+import MenuSimple from './components/menu-simple/menu-simple.js';
+import Products from './components/products/products.js';
+import ExampleModule from "./components/example-module/examples-module.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
-  new ProductsList();
-  new TopMenu();
-  new SimpleMenu();
+  new MenuTop();
+  new MenuSimple();
+  new Products();
   new ExampleModule();
 });
