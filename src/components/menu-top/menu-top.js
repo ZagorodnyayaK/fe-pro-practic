@@ -24,6 +24,7 @@ const menuItems = [
 export default class {
   constructor() {
     const wrapper = document.querySelector('[data-module="menu-top"]');
+    console.log(wrapper)
     const items = wrapper.getElementsByClassName('menu-top--item')
     wrapper.innerHTML = ''
 
