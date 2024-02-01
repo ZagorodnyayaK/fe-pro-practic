@@ -19,9 +19,9 @@ export default class {
     item.appendChild(itemText);
 
     const itemButton = document.createElement('button');
-    itemText.classList.add('product-list--button-more');
+    itemButton.classList.add('product-list--button-more');
     itemButton.innerHTML = 'read more';
-    itemButton.appendChild(itemButton);
+    item.appendChild(itemButton);
 
     this.domElement = item;
   }

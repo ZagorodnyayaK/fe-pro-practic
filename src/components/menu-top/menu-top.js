@@ -1,39 +1,15 @@
-const menuItems = [
-  {
-    bgColor: '#1abc9c',
-    text: 'home',
-  },
-  {
-    bgColor: '#e74c3c',
-    text: 'products',
-  },
-  {
-    bgColor: '#3498db',
-    text: 'about',
-  },
-  {
-    bgColor: '#9b59b6',
-    text: 'portfolio',
-  },
-  {
-    bgColor: '#e67e22',
-    text: 'contact us',
-  },
-];
-
 export default class {
-  constructor() {
-    const wrapper = document.querySelector('[data-module="menu-top"]');
-    console.log(wrapper)
-    const items = wrapper.getElementsByClassName('menu-top--item')
-    wrapper.innerHTML = ''
+  constructor(menuItems) {
+    this.wrapper = document.querySelector('[data-module="menu-top"]');
+    const items = this.wrapper.getElementsByClassName('menu-top--item')
+    this.wrapper.innerHTML = '';
 
     let activeItemIndex = 0;
 
     const effect = document.createElement('span');
     effect.classList.add('menu--effect');
     effect.style.width = `calc(100% / ${menuItems.length})`;
-    wrapper.appendChild((effect));
+    this.wrapper.appendChild((effect));
 
 
     const fragment = new DocumentFragment();
@@ -44,31 +20,40 @@ export default class {
       item.innerHTML = text;
       fragment.appendChild(item);
     }
-    wrapper.appendChild(fragment);
+    this.wrapper.appendChild(fragment);
 
     const updateEffectByIndex = (index) => {
       effect.style.left = `calc(${index} * 100% / ${menuItems.length})`;
       effect.style.backgroundColor = menuItems[index].bgColor;
     };
 
-    const onItemOver = (e) => {
+    this.onItemOver = (e) => {
       const {target} = e;
       const linkIndex = [...items].findIndex((i) => i === target);
       updateEffectByIndex(linkIndex);
     };
 
-    const onItemLeave = () => {
+    this.onItemLeave = () => {
       updateEffectByIndex(activeItemIndex);
     };
 
-    const onClick = (e) => {
+    this.onClick = (e) => {
       e.preventDefault();
       activeItemIndex = [...items.findIndex((i) => i === e.target)];
     };
 
     updateEffectByIndex(0);
-    wrapper.addEventListener('mouseover', onItemOver);
-    wrapper.addEventListener('mouseleave', onItemLeave);
-    wrapper.addEventListener('click', onClick);
+    this.wrapper.addEventListener('mouseover', this.onItemOver);
+    this.wrapper.addEventListener('mouseleave', this.onItemLeave);
+    this.wrapper.addEventListener('click', this.onClick);
   }
+
+  destroy() {
+    this.wrapper.removeEventListener('mouseover', this.onItemOver);
+    this.wrapper.removeEventListener('mouseleave', this.onItemLeave);
+    this.wrapper.removeEventListener('click', this.onClick);
+    this.wrapper.innerHTML = '';
+  }
+
+
 }

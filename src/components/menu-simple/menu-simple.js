@@ -1,11 +1,7 @@
-
-
 export default class {
-  constructor(menuWrapper, menuItems) {
+  constructor(menuItems) {
+    this.wrapper = document.querySelector('[data-module="menu-simple"]');
     const docFragment = new DocumentFragment();
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('menu-simple');
-    menuWrapper.appendChild(wrapper);
 
     for (const item of menuItems) {
 
@@ -17,8 +13,13 @@ export default class {
       link.innerHTML = text;
       link.href = '#';
 
-      wrapper.appendChild(link);
+      docFragment.appendChild(link);
     }
-    docFragment.appendChild(docFragment);
+    this.wrapper.appendChild(docFragment);
   }
+
+  destroy() {
+    this.wrapper.innerHTML = '';
+  }
+
 }

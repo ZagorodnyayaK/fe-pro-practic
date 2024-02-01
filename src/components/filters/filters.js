@@ -6,6 +6,7 @@ export default class extends Component {
     super();
 
     const wrapper = document.querySelector('[data-module="filters"]');
+    const docFragment = new DocumentFragment();
     const instances = [];
 
     this.onItemChange = this.onItemChange.bind(this);
@@ -13,16 +14,19 @@ export default class extends Component {
     for (const filter of filters) {
       const instance = new FiltersItem(filter);
 
-      wrapper.appendChild(instance.domElement);
+      docFragment.appendChild(instance.domElement);
       instances.push(instance);
-      instance.on('change', this.onItemChange);
     }
+    wrapper.addEventListener('change', this.onItemChange);
+    wrapper.appendChild(docFragment);
 
     this.inctances = instances;
   }
 
-  onItemChanche() {
-    const activeFilters = this.inctances.filter((i) => i.getState());
-    const activeFiltersIds = activeFilters.map((i) => i.getId());
+  onItemChange() {
+    this.emit(
+      'change',
+      this.inctances.filter((i) => i.getState()).map((i) => i.getId())
+    )
   };
 }
