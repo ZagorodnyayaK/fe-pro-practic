@@ -41,21 +41,22 @@ export default class CommonMenu extends Component {
   }
 
   useMobile() {
- if ( this.MenuTop ) {
-   this.MenuTop.destroy();
-   this.MenuTop = null;
- }
- if ( !this.MenuSimple) {
-   this.MenuSimple = new MenuSimple(menuItems);
- }
+    if (this.MenuTop) {
+      this.MenuTop.destroy();
+      this.MenuTop = null;
+
+    }
+    if (!this.MenuSimple) {
+      this.MenuSimple = new MenuSimple(menuItems);
+    }
   }
 
   useDesktop() {
-    if ( this.MenuSimple ) {
+    if (this.MenuSimple) {
       this.MenuSimple.destroy();
       this.MenuSimple = null;
     }
-    if ( !this.MenuTop) {
+    if (!this.MenuTop) {
       this.MenuTop = new MenuTop(menuItems);
     }
   }
@@ -64,13 +65,8 @@ export default class CommonMenu extends Component {
   }
 
   destroy() {
-    // this.rh.clearCase('(max-width: 1023px)', this.useMobile, this.useDesktop);
+
   }
 }
-
-
-// setTimeout(() => {
-//   this.destroy();
-// }, 5000);
 
 

@@ -473,6 +473,6 @@ export default class {
   }
 
   destroy() {
-    this.filterInstance.off('xxxccc', this.updateFilters);
+    this.filterInstance.off('del', this.updateFilters);
   }
 }

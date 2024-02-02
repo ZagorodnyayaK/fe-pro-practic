@@ -1,4 +1,4 @@
-.menu-simple{
+[data-module="menu-simple"] {
   align-content: center;
   display: flex;
   font-weight: 700;
@@ -8,6 +8,10 @@
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
+  opacity: .8;
+
+
+
 }
 
 .menu-simple--item {

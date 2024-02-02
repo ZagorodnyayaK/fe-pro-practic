@@ -20,6 +20,7 @@ export default class {
 
   destroy() {
     this.wrapper.innerHTML = '';
+
   }
 
 }

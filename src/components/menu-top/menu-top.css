@@ -5,6 +5,7 @@
   position: relative;
   text-align: center;
   text-transform: uppercase;
+
 }
 
 .menu--item {
@@ -17,16 +18,18 @@
 }
 
 .menu--effect {
-  background-color: #f00;
-  height: 100%;
+  opacity: .7;
   position: absolute;
+  z-index: -1;
+  background: transparent;
+  height: 100%;
   left: 0;
   top: 0;
   border-bottom: solid #000000;
-  transition-duration: 0.25s;
-  transition-timing-function: ease-in-out;
-  transition-property: left, background-color;
-  z-index: -1;
+  transition: 0.7s
+  cubic-bezier(0.175,0.885, 0.32, 1.275);
+  box-shadow: inset 0 -50px 50px -50px;
+
 }
 
 .menu-top--item {
