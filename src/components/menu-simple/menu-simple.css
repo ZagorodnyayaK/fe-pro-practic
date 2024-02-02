@@ -8,10 +8,6 @@
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
-  opacity: .8;
-
-
-
 }
 
 .menu-simple--item {
@@ -20,5 +16,4 @@
   padding: 10px;
   text-decoration: none;
   width: 100%;
-
 }
