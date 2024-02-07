@@ -44,7 +44,6 @@ export default class CommonMenu extends Component {
     if (this.MenuTop) {
       this.MenuTop.destroy();
       this.MenuTop = null;
-
     }
     if (!this.MenuSimple) {
       this.MenuSimple = new MenuSimple(menuItems);
@@ -58,6 +57,7 @@ export default class CommonMenu extends Component {
     }
     if (!this.MenuTop) {
       this.MenuTop = new MenuTop(menuItems);
+      this.MenuTop.update();
     }
   }
 

@@ -52,7 +52,11 @@ export default class {
     this.wrapper.removeEventListener('mouseover', this.onItemOver);
     this.wrapper.removeEventListener('mouseleave', this.onItemLeave);
     this.wrapper.removeEventListener('click', this.onClick);
-    this.wrapper.innerHTML = '';
+    this.wrapper.style.display = 'none';
+  }
+
+  update() {
+    this.wrapper.style.display = 'flex';
   }
 
 
