@@ -1,6 +1,8 @@
 import FiltersItem from "../filters-item/filters-item.js";
 import Component from "../../lib/component/component.js";
 
+const filters = ['tech', 'it', 'e-commerce', 'gambling', 'gaming'];
+
 export default class extends Component {
   constructor(filters) {
     super();
@@ -12,6 +14,7 @@ export default class extends Component {
     this.onItemChange = this.onItemChange.bind(this);
 
     for (const filter of filters) {
+      console.log(filters)
       const instance = new FiltersItem(filter);
 
       docFragment.appendChild(instance.domElement);
