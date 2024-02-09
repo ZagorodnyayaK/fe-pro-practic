@@ -10,3 +10,7 @@
   margin: 0 10px;
   vertical-align: middle;
 }
+
+[data-module="filters"] {
+  margin: 20px;
+}

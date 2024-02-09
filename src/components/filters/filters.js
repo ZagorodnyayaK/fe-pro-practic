@@ -1,8 +1,6 @@
 import FiltersItem from "../filters-item/filters-item.js";
 import Component from "../../lib/component/component.js";
 
-const filters = ['tech', 'it', 'e-commerce', 'gambling', 'gaming'];
-
 export default class extends Component {
   constructor(filters) {
     super();

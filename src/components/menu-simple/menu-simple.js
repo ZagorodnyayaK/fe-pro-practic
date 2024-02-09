@@ -19,7 +19,9 @@ export default class {
   }
 
   destroy() {
-    this.wrapper.innerHTML = '';
+    this.wrapper.style.display = 'none';
   }
-
+  update() {
+    this.wrapper.style.display = 'flex';
+  }
 }

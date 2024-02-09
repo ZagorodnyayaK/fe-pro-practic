@@ -45,6 +45,7 @@ export default class CommonMenu extends Component {
     }
     if (!this.menuSimple) {
       this.menuSimple = new menuSimple(menuItems);
+      this.menuSimple.update();
     }
   }
 
