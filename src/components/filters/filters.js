@@ -12,7 +12,6 @@ export default class extends Component {
     this.onItemChange = this.onItemChange.bind(this);
 
     for (const filter of filters) {
-      console.log(filters)
       const instance = new FiltersItem(filter);
 
       docFragment.appendChild(instance.domElement);
