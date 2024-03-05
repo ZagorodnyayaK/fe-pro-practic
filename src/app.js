@@ -5,5 +5,4 @@ import Filters from "./components/filters/filters.js";
 document.addEventListener('DOMContentLoaded', async () => {
   new Menu()
   new Products();
-  new Filters();
 });

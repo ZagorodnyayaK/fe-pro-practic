@@ -19,7 +19,7 @@ export default class {
   }
 
   destroy() {
-    this.wrapper.style.display = 'none';
+    this.wrapper.innerHTML = '';
   }
   update() {
     this.wrapper.style.display = 'flex';

@@ -17,7 +17,7 @@ export default class extends Component {
     this.id = filterName;
 
     checkbox.addEventListener('change', () => {
-      this.emit('change, checkbox.checked');
+      this.emit('change');
     });
   }
 

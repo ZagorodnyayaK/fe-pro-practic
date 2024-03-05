@@ -11,14 +11,10 @@ export default class {
 
     for (const productProps of productsList) {
       const productInstance = new ProductListItem(productProps);
-
-      // productInstance.addEventLister('some-thing-changed', () => {});
       fragment.appendChild(productInstance.domElement);
     }
 
     this.wrapper.innerHTML = '';
     this.wrapper.appendChild(fragment);
   }
-
-  destroy() {}
 }

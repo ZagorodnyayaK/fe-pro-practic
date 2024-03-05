@@ -15,9 +15,9 @@ export default class extends Component {
       const instance = new FiltersItem(filter);
 
       docFragment.appendChild(instance.domElement);
+      instance.on('change', this.onItemChange);
       instances.push(instance);
     }
-    wrapper.addEventListener('change', this.onItemChange);
     wrapper.appendChild(docFragment);
 
     this.inctances = instances;
@@ -25,8 +25,11 @@ export default class extends Component {
 
   onItemChange() {
     this.emit(
-      'change',
+      'filter-change',
       this.inctances.filter((i) => i.getState()).map((i) => i.getId())
     )
   };
+
+
+
 }

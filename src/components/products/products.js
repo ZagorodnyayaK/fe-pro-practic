@@ -454,22 +454,25 @@ export default class {
   constructor() {
     this.filterInstance = new Filters(filters);
     this.listInstance = new ProductsList(productsList);
-    // this.sort = new Sort();
-    // this.sort.on('change',...);
-
     this.updateFilters = this.updateFilters.bind(this);
-    this.filterInstance.on('change', this.updateFilters);
+    this.filterInstance.on('filter-change', this.updateFilters);
   }
 
   updateFilters(newFilters) {
-    const filteredProductList = !newFilters.length
-      ? productsList
-      : productsList.filter(({ category }) => {
-        return newFilters.includes(category);
-      });
-  }
+    if (newFilters.length > 0) {
+      const filteredProducts = [];
 
-  update() {
+      for (const product of productsList) {
+        const category = product.category;
+        if (newFilters.includes(category)) {
+          filteredProducts.push(product);
+        }
+      }
+
+      this.listInstance.updateList(filteredProducts)
+    } else {
+      this.listInstance.updateList(productsList)
+    }
   }
 
   destroy() {
